@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p
+{
+color:red;
+
+}
+body
+{
+background:black;
+max-width:100%;
+max-height:100%;
+overflow:hidden;
+
+}
+#a
+{
+position:absolute;
+left:45%;
+top:45%;
+background:yellow;
+width:10%;
+height:10%;
+
+}
+
+#t
+{
+position:absolute;
+left:50%;
+top:-2%;
+background:blue;
+width:1%;
+height:2%;
+}
+#l
+{
+position:absolute;
+left:-1%;
+top:50%;
+background:blue;
+height:2%;
+width:1%;
+}#r
+{
+position:absolute;
+left:100%;
+top:50%;
+background:blue;
+height:2%;
+width:1%;
+}#b
+{
+position:absolute;
+left:50%;
+top:100%;
+background:blue;
+width:1%;
+height:2%;
+}
+
+h1
+{
+color:red;
+}
+
+h2
+{
+color:red;
+}
+
+h3
+{
+color:red;
+}
+</style>
+<script src="./myjq.js"></script>
+
+<script>
+$(document).ready(function(){
+
+
+	var variationw=$("#t").width();
+
+	var variationh=$("#l").height();
+
+
+	var audio={};
+	 audio["walk"] = new Audio();
+        audio["walk"].src = "./sd.mp3"
+
+
+var hits=0;
+var la;
+var ta;
+var ha;
+var wa;
+
+var x;
+var y;
+
+var ll;
+var tt;
+var hh;
+var ww;
+
+
+var l;
+var t;
+var ht;
+var wt;
+var bug=0;
+setInterval(function(){
+
+
+ ll=parseInt($("#a").css("left"),10);
+ tt=parseInt($("#a").css("top"),10);
+ hh=$("#a").height();
+ ww=$("#a").width();
+
+
+
+if(bug==1)
+	{
+		
+ la=parseInt($("#t").css("left"),10);
+ ta=parseInt($("#t").css("top"),10);
+ ha=$("#t").height();
+ wa=$("#t").width();
+
+
+		if(((ta+ha)>=tt&&(ta+ha)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
+		{
+				hits++;
+				$("h3").text(hits);
+$("#a").css("background","#"+x+"000"+y+"0");
+            audio["walk"].play();
+
+		}
+
+
+
+	}
+
+
+
+else if(bug==2)
+	{
+		
+ la=parseInt($("#l").css("left"),10);
+ ta=parseInt($("#l").css("top"),10);
+ ha=$("#l").height();
+ wa=$("#l").width();
+
+
+		if(((la+wa)>=ll&&(la+wa)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
+		{
+				hits++;
+				$("h3").text(hits);
+				$("#a").css("background","#"+x+"00"+y+"00");
+				            audio["walk"].play();
+
+
+				
+		}
+
+
+
+	}
+
+else if(bug==3)
+	{
+		
+ la=parseInt($("#b").css("left"),10);
+ ta=parseInt($("#b").css("top"),10);
+ ha=$("#b").height();
+ wa=$("#b").width();
+
+
+		if(((ta)>=tt&&(ta)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
+		{
+				hits++;
+				$("h3").text(hits);
+				$("#a").css("background","#"+x+"0"+y+"000");
+				            audio["walk"].play();
+
+
+				
+		}
+
+
+
+	}
+
+else if(bug==4)
+	{
+		
+ la=parseInt($("#r").css("left"),10);
+ ta=parseInt($("#r").css("top"),10);
+ ha=$("#r").height();
+ wa=$("#r").width();
+
+
+		if(((la)>=ll&&(la)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
+		{
+				hits++;
+				$("h3").text(hits);
+				$("#a").css("background","#"+x+""+y+"0000");
+				            audio["walk"].play();
+
+
+				
+		}
+
+
+
+	}
+
+
+
+},1);
+
+setInterval(function(){
+
+
+ l=parseInt($("#a").css("left"),10);
+ t=parseInt($("#a").css("top"),10);
+ ht=$("#a").height();
+ wt=$("#a").width();
+
+ 
+
+  y = Math.floor((Math.random() * 10)+1);
+
+  x = Math.floor((Math.random() * 10));
+
+if(y>5)
+y=y-5;
+
+var k1=l+((wt*(y-1))/4)-(variationw/2);
+var k2=t+((ht*(y-1))/4)-(variationh/2);
+$("h1").text(x+"   "+y);
+
+if(x==0||x==4||x==8)
+{
+	bug=1;
+	$("#t").css("left",k1);
+$("#t").show();
+$("#t").animate({
+top:'100%'
+},2000,function(){
+
+$("#t").hide();
+$("#t").animate({
+top:'0%'
+});
+
+});
+
+}
+
+else if(x==1||x==5||x==9)
+{
+	bug=2;
+	$("#l").css("top",k2);
+$("#l").show();
+$("#l").animate({
+left:'100%'
+},2000,function(){
+
+$("#l").hide();
+$("#l").animate({
+left:'0%'
+});
+
+});
+
+}
+else if(x==2||x==6)
+{
+	bug=3;
+	$("#b").css("left",k1);
+$("#b").show();
+$("#b").animate({
+top:'-5%'
+},2000,function(){
+
+$("#b").hide();
+$("#b").animate({
+top:'100%'
+});
+
+});
+
+
+}
+
+else if(x==3||x==7)
+{
+	bug=4;
+	$("#r").css("top",k2);
+$("#r").show();
+$("#r").animate({
+left:'-5%'
+},2000,function(){
+
+$("#r").hide();
+$("#r").animate({
+left:'100%'
+});
+
+});
+
+
+}
+
+},2500);
+
+
+
+var flag=0;
+var lef=0;
+var tp=0;
+var h=0;
+var w=0;
+
+
+var el = $(document);
+
+var xp=0;
+var yp=0;
+var xx=0;
+var yy=0;
+
+el[0].addEventListener('touchstart', function(event) {
+
+ lef=parseInt($("#a").css("left"),10);
+ tp=parseInt($("#a").css("top"),10);
+ h=$("#a").height();
+ w=$("#a").width();
+
+
+
+  xp=event.changedTouches[0].pageX;
+  yp=event.changedTouches[0].pageY;
+
+
+
+if(xp>=lef&&xp<=(lef+w)&&yp<=(tp+h+6)&&yp>=(tp+h-6))
+    flag=1;
+else if(xp>=lef&&xp<=(lef+w)&&yp<=(tp+6)&&yp>=(tp-6))
+    flag=2;
+else if(yp>=tp&&yp<=(tp+h)&&xp<=(lef+w+6)&&xp>=(lef+w-6))
+    flag=3;
+else if(yp>=tp&&yp<=(tp+h)&&xp<=(lef+6)&&xp>=(lef-6))
+    flag=4;
+
+
+
+},false);
+
+
+
+el[0].addEventListener("touchmove", function(event) {
+
+  xx=event.changedTouches[0].pageX;
+  yy=event.changedTouches[0].pageY;
+
+
+ $("span").text(xx + ", " + yy+",,,"+$("#a").css("left")+","+$("#a").css("top")+"flag="+flag);
+
+
+if(flag==1)
+{
+
+    if(yy<tp)
+{
+
+    $("#a").animate({
+                       top:yy
+                       ,height:tp-yy
+
+                   },1);
+
+
+
+}
+
+else
+{
+    $("#a").animate({
+                       top:tp
+                       ,height:(yy)-tp
+
+                   },1);
+}
+}
+else if(flag==2)
+{
+
+
+    if(yy<tp+h)
+{
+
+    $("#a").animate({
+                       top:yy
+                       ,height:h+tp-yy
+
+                   },1);
+
+
+
+}
+
+else
+{
+    $("#a").animate({
+                       top:tp+h
+                       ,height:(yy)-(tp+h)
+
+                   },1);
+}
+
+}
+
+
+else if(flag==3)
+{
+
+    if(xx<lef)
+{
+
+    $("#a").animate({
+                       left:xx
+                       ,width:lef-xx
+
+                   },1);
+
+
+
+}
+
+else
+{
+    $("#a").animate({
+                       left:lef
+                       ,width:(xx)-lef
+
+                   },1);
+}
+}
+
+
+else if(flag==4)
+{
+
+
+    if(xx<lef+w)
+{
+
+    $("#a").animate({
+                       left:xx
+                       ,width:w+lef-xx
+
+                   },1);
+
+
+
+}
+
+else
+{
+    $("#a").animate({
+                       left:lef+w
+                       ,width:(xx)-(lef+w)
+
+                   },1);
+}
+
+}
+
+
+
+
+
+},false);
+
+el[0].addEventListener("touchend", function(e) {
+flag=0;
+
+},false);
+
+});
+</script>
+</head>
+<body>
+<div id="a"></div>
+
+<div id="t"></div>
+
+<div id="l"></div>
+
+<div id="r"></div>
+
+<div id="b"></div>
+
+</body>
+</html>
