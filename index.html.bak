@@ -343,8 +343,8 @@ el[0].addEventListener('touchstart', function(event) {
 
 
 
-  xp=event.changedTouches[0].pageX;
-  yp=event.changedTouches[0].pageY;
+  xp=event.touches[0].pageX;
+  yp=event.touches[0].pageY;
 
 
 
