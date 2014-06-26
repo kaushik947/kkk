@@ -327,7 +327,7 @@ var h=0;
 var w=0;
 
 
-var el = $(document);
+var el = $("body");
 
 var xp=0;
 var yp=0;
