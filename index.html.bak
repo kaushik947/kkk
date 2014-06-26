@@ -336,6 +336,8 @@ var yy=0;
 
 el[0].addEventListener('touchstart', function(event) {
 
+event.preventDefault();
+
  lef=parseInt($("#a").css("left"),10);
  tp=parseInt($("#a").css("top"),10);
  h=$("#a").height();
@@ -364,6 +366,8 @@ else if(yp>=tp&&yp<=(tp+h)&&xp<=(lef+6)&&xp>=(lef-6))
 
 
 el[0].addEventListener("touchmove", function(event) {
+
+event.preventDefault();
 
   xx=event.changedTouches[0].pageX;
   yy=event.changedTouches[0].pageY;
