@@ -334,9 +334,9 @@ var yp=0;
 var xx=0;
 var yy=0;
 
-el[0].addEventListener('touchstart', function(event) {
+el.addEventListener('touchstart', function(event) {
 	
-event.preventDefault();
+
  lef=parseInt($("#a").css("left"),10);
  tp=parseInt($("#a").css("top"),10);
  h=$("#a").height();
@@ -344,8 +344,8 @@ event.preventDefault();
 
 
 
-  xp=event.touches[0].pageX;
-  yp=event.touches[0].pageY;
+  xp=event.x;
+  yp=event.y;
 
 
 
@@ -360,15 +360,15 @@ else if(yp>=tp&&yp<=(tp+h)&&xp<=(lef+6)&&xp>=(lef-6))
 
 
 
-},false);
+});
 
 
 
-el[0].addEventListener("touchmove", function(event) {
+el.addEventListener("touchmove", function(event) {
 
-event.preventDefault();
-  xx=event.changedTouches[0].pageX;
-  yy=event.changedTouches[0].pageY;
+
+  xx=event.x;
+  yy=event.y;
 
 
  $("span").text(xx + ", " + yy+",,,"+$("#a").css("left")+","+$("#a").css("top")+"flag="+flag);
@@ -487,13 +487,13 @@ else
 
 
 
-},false);
+});
 
-el[0].addEventListener("touchend", function(e) {
+el.addEventListener("touchend", function(e) {
 	
 flag=0;
 
-},false);
+});
 
 });
 </script>
