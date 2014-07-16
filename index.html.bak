@@ -334,7 +334,7 @@ var yp=0;
 var xx=0;
 var yy=0;
 
-el.addEventListener('touchstart', function(event) {
+el[0].addEventListener('touchstart', function(event) {
 
 
  lef=parseInt($("#a").css("left"),10);
@@ -344,8 +344,8 @@ el.addEventListener('touchstart', function(event) {
 
 
 
-  xp=event.x;
-  yp=event.y;
+  xp=event.touches[0].pageX;
+  yp=event.touches[0].pageY;
 
 
 
@@ -364,11 +364,11 @@ else if(yp>=tp&&yp<=(tp+h)&&xp<=(lef+6)&&xp>=(lef-6))
 
 
 
-el.addEventListener("touchmove", function(event) {
+el[0].addEventListener("touchmove", function(event) {
 
 
-  xx=event.x;
-  yy=event.y;
+  xx=event.touches[0].pageX;
+  yy=event.touches[0].pageY;
 
 
  $("span").text(xx + ", " + yy+",,,"+$("#a").css("left")+","+$("#a").css("top")+"flag="+flag);
@@ -489,7 +489,7 @@ else
 
 });
 
-el.addEventListener("touchend", function(e) {
+el[0].addEventListener("touchend", function(e) {
 flag=0;
 
 });
@@ -498,6 +498,7 @@ flag=0;
 </script>
 </head>
 <body>
+<p><span> </span></p>
 <div id="a"></div>
 
 <div id="t"></div>
