@@ -364,13 +364,13 @@ el[0].addEventListener('touchstart', function(event) {
  var x=startX;
  var y=startY;
 
-if(x>=lef&&x<=(lef+w)&&y<=(tp+h+25)&&y>=(tp+h-25))
+if(x>=lef&&x<=(lef+w)&&y<=(tp+h+30)&&y>=(tp+h-30))
     flag=1;
-else if(x>=lef&&x<=(lef+w)&&y<=(tp+25)&&y>=(tp-25))
+else if(x>=lef&&x<=(lef+w)&&y<=(tp+30)&&y>=(tp-30))
     flag=2;
-else if(y>=tp&&y<=(tp+h)&&x<=(lef+w+25)&&x>=(lef+w-25))
+else if(y>=tp&&y<=(tp+h)&&x<=(lef+w+30)&&x>=(lef+w-30))
     flag=3;
-else if(y>=tp&&y<=(tp+h)&&x<=(lef+25)&&x>=(lef-25))
+else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
     flag=4;
 
 
