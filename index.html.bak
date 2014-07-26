@@ -102,6 +102,13 @@ $(document).ready(function(){
 
 
 
+var speeda=$("#a");
+var speedt=$("#t");
+var speedl=$("#l");
+var speedb=$("#b");
+var speedr=$("#r");
+var scr=$("#score");
+
 
 	var variationw=speedt.width();
 
@@ -144,12 +151,6 @@ var ht;
 var wt;
 var bug=0;
 
-var speeda=$("#a");
-var speedt=$("#t");
-var speedl=$("#l");
-var speedb=$("#b");
-var speedr=$("#r");
-var scr=$("#score");
 
 setInterval(function(){
 
