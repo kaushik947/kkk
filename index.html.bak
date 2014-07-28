@@ -102,6 +102,7 @@ $(document).ready(function(){
 
 
 
+
 var speeda=$("#a");
 var speedt=$("#t");
 var speedl=$("#l");
@@ -120,7 +121,7 @@ var scr=$("#score");
 
 	var audio={};
 	 audio["walk"] = new Audio();
-        audio["walk"].src = "./sd.mp3"
+        audio["walk"].src = "./sd.mp3";
 
 
 
@@ -182,7 +183,7 @@ if(bug==1)
 		if(((ta+ha)>=tt&&(ta+ha)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
 		{
 				hits++;
-				$("h3").text(hits);
+				scr.text(hits);
             audio["walk"].play();
 
 
@@ -215,7 +216,7 @@ else if(bug==2)
 		if(((la+wa)>=ll&&(la+wa)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
 		{
 				hits++;
-				$("h3").text(hits);
+				scr.text(hits);
 
 
 				            audio["walk"].play();
@@ -250,7 +251,7 @@ else if(bug==3)
 		if(((ta)>=tt&&(ta)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
 		{
 				hits++;
-				$("h3").text(hits);
+				scr.text(hits);
 
 
 				            audio["walk"].play();
@@ -285,7 +286,7 @@ else if(bug==4)
 		if(((la)>=ll&&(la)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
 		{
 				hits++;
-				$("h3").text(hits);
+				scr.text(hits);
 
 
 				            audio["walk"].play();
@@ -338,7 +339,7 @@ y=y-5;
 
 var k1=l+((wt*(y-1))/4)-(variationw/2);
 var k2=t+((ht*(y-1))/4)-(variationh/2);
-$("h1").text(x+"   "+y);
+
 
 
 if(x==0||x==4||x==8)
@@ -428,7 +429,7 @@ speedr.css("left","100%")
 
 }
 score++;
-scr.text(score);
+
 
 
 },2200);
@@ -462,15 +463,13 @@ el[0].addEventListener('touchstart', function(event) {
   // offsetY = ($(window).height()-el.outerHeight(true))/2;
   startY = event.targetTouches[0].pageY;
  
- $("h1").text(startX+"/"+startY);
- 
+
  lef=parseInt(speeda.css("left"),10);
  tp=parseInt(speeda.css("top"),10);
  h=speeda.height();
  w=speeda.width();
 
 
- speeda.text(lef);
  var x=startX;
  var y=startY;
 
@@ -512,9 +511,6 @@ el[0].addEventListener("touchmove", function(event) {
 
 
 
- $("span").text(x + ", " + y+",,,"+speeda.css("left")+","+speeda.css("top")+lef+"flag="+flag);
-
-
 
 
 if(flag==1)
@@ -552,9 +548,6 @@ else
 }
 else if(flag==2)
 {
-
-
-speeda.text("hello");
 
 
     if(y<tp+h)
@@ -633,7 +626,6 @@ else if(flag==4)
 {
 
 
-speeda.text("hello");
 
 
     if(x<lef+w)
@@ -692,9 +684,9 @@ flag=0;
 </script>
 </head>
 <body>
-<h1> </h1>
+
 <h2 id="score"></h2>
-<p><span> </span></p>
+
 <div id="a"></div>
 
 
