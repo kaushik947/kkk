@@ -119,9 +119,9 @@ var scr=$("#score");
 
 
 
-	var audio={};
-	 audio["walk"] = new Audio();
-        audio["walk"].src = "./sd.mp3";
+	var audio = new Media("./sd.mp3");
+
+
 
 
 
@@ -184,8 +184,8 @@ if(bug==1)
 		{
 				hits++;
 				scr.text(hits);
-            audio["walk"].play();
 
+audio.play();
 
 		}
 
@@ -219,7 +219,8 @@ else if(bug==2)
 				scr.text(hits);
 
 
-				            audio["walk"].play();
+
+audio.play();
 
 
 
@@ -254,7 +255,8 @@ else if(bug==3)
 				scr.text(hits);
 
 
-				            audio["walk"].play();
+
+audio.play();
 
 
 
@@ -289,7 +291,8 @@ else if(bug==4)
 				scr.text(hits);
 
 
-				            audio["walk"].play();
+
+audio.play();
 
 
 
