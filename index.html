@@ -95,7 +95,7 @@ color:red;
 }
 </style>
 <script src="./myjq.js"></script>
-
+<script src="./jquery.vibrate.min.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -121,7 +121,10 @@ var scr=$("#score");
 
 	var audio = new Media("./sd.mp3");
 
-
+speeda.vibrate({
+    duration: 1000,
+    trigger: "touchstart"
+});
 
 
 
