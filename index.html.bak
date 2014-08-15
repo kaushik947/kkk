@@ -33,7 +33,8 @@ overflow:hidden;
 position:absolute;
 left:45%;
 top:45%;
-background:yellow;
+border: 2px solid white;
+background:black;
 width:10%;
 height:10%;
 
@@ -121,10 +122,6 @@ var scr=$("#score");
 
 	var audio = new Media("./sd.mp3");
 
-speeda.vibrate({
-    duration: 1000,
-    trigger: "touchstart"
-});
 
 
 
