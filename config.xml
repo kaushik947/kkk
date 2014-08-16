@@ -7,7 +7,7 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>PhoneGap Example</name>
+    <name>vibrate</name>
 
     <description>
       An example for phonegap build docs. 
@@ -17,6 +17,6 @@
       Hardeep Shoker 
     </author>
 
-    <!-- We'll include the Barcode plugin as an example -->
+    
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.7" />
 </widget>
