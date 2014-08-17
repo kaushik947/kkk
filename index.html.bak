@@ -179,6 +179,7 @@ if(bug==1)
 		{
 				hits++;
 				scr.text(hits);
+				playAudio('Sound');
 
 
 		}
@@ -689,6 +690,8 @@ flag=0;
 </script>
 </head>
 <body>
+<audio id="Sound" src="./sd.mp3" type="audio/mpeg" ></audio>
+
 
 <h2 id="score"></h2>
 
