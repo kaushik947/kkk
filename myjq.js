@@ -10011,6 +10011,20 @@ var docElem = window.document.documentElement;
 /**
  * Gets a window from an element
  */
+ 
+ function playAudio(id) {
+    var audioElement = document.getElementById(id);
+    var url = audioElement.getAttribute('src');
+    var my_media = new Media(url,
+            // success callback
+             function () { console.log("playAudio():Audio Success"); },
+            // error callback
+             function (err) { console.log("playAudio():Audio Error: " + err); }
+    );
+           // Play audio
+    my_media.play();
+}
+ 
 function getWindow( elem ) {
 	return jQuery.isWindow( elem ) ?
 		elem :
