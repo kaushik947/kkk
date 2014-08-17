@@ -100,7 +100,13 @@ color:red;
 <script>
 $(document).ready(function(){
 
+document.addEventListener("deviceready", onDeviceReady, true);
 
+    function onDeviceReady(){
+        window.alert("OK@!");
+        var snd = new Media("./sd.mp3");
+        snd.play();
+    }
 
 
 var speeda=$("#a");
