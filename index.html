@@ -424,6 +424,7 @@ speedr.css("left","100%")
 
 }
 score++;
+navigator.notification.vibrate(1000);
 
 
 
@@ -468,7 +469,8 @@ el[0].addEventListener('touchstart', function(event) {
  var x=startX;
  var y=startY;
 
-speeda.vibrate();
+navigator.notification.vibrate(1000);
+
 
 if(x>=lef&&x<=(lef+w)&&y<=(tp+h+30)&&y>=(tp+h-30))
 {
