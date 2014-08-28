@@ -97,16 +97,10 @@ color:red;
 </style>
 <script src="./myjq.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+<script src="./jquery.vibrate.js"></script>
 <script>
 $(document).ready(function(){
 
-document.addEventListener("deviceready", onDeviceReady, true);
-
-    function onDeviceReady(){
-        window.alert("OK@!");
-        var snd = new Media("./sd.mp3");
-        snd.play();
-    }
 
 
 var speeda=$("#a");
@@ -185,7 +179,7 @@ if(bug==1)
 		{
 				hits++;
 				scr.text(hits);
-				playAudio('Sound');
+				
 
 
 		}
@@ -430,6 +424,7 @@ speedr.css("left","100%")
 
 }
 score++;
+navigator.notification.vibrate(1000);
 
 
 
@@ -474,26 +469,28 @@ el[0].addEventListener('touchstart', function(event) {
  var x=startX;
  var y=startY;
 
+navigator.notification.vibrate(1000);
+
 
 if(x>=lef&&x<=(lef+w)&&y<=(tp+h+30)&&y>=(tp+h-30))
 {
     	flag=1;
-    	navigator.notification.vibrate(1000);
+    	
 }
 else if(x>=lef&&x<=(lef+w)&&y<=(tp+30)&&y>=(tp-30))
  {
  	flag=2;
- 	navigator.notification.vibrate(1000);
+ 	
 }
 else if(y>=tp&&y<=(tp+h)&&x<=(lef+w+30)&&x>=(lef+w-30))
 {
 	flag=3;
-	navigator.notification.vibrate(1000);
+	
 }
 else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
 {
 	flag=4;
-	navigator.notification.vibrate(1000);
+	
 }
 
 
