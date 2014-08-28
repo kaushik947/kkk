@@ -97,6 +97,7 @@ color:red;
 </style>
 <script src="./myjq.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+<script src="./jquery.vibrate.js"></script>
 <script>
 $(document).ready(function(){
 
@@ -467,6 +468,7 @@ el[0].addEventListener('touchstart', function(event) {
  var x=startX;
  var y=startY;
 
+speeda.vibrate();
 
 if(x>=lef&&x<=(lef+w)&&y<=(tp+h+30)&&y>=(tp+h-30))
 {
