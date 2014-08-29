@@ -109,6 +109,17 @@ document.addEventListener("deviceready", onDeviceReady, false);
             'Done'                  // buttonName
         );
         // Empty
+        
+         var my_media = new Media("./sd.mp3",
+        // success callback
+        function () {
+        },
+        // error callback
+        function (err) {
+        }
+    );
+        
+        
     }
 
 $(document).ready(function(){
@@ -437,7 +448,6 @@ speedr.css("left","100%")
 }
 score++;
 
-navigator.notification.beep(1);
 
 
 },2200);
@@ -499,9 +509,9 @@ else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
 	
 }
 
-navigator.notification.vibrate(20);
+navigator.notification.vibrate(10);
 
-
+my_media.play();
 
 
 },false);
