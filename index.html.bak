@@ -96,8 +96,7 @@ color:red;
 }
 </style>
 <script src="./myjq.js"></script>
-<script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
-<script src="./jquery.vibrate.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script>
 $(document).ready(function(){
 
@@ -424,13 +423,17 @@ speedr.css("left","100%")
 
 }
 score++;
-navigator.notification.vibrate(1000);
+
 
 
 
 },2200);
 
-
+navigator.notification.alert(
+						'You are the winner!',  // message
+						'Game Over',            // title
+						'Done'                  // buttonName
+					);
 
 
 
@@ -471,6 +474,7 @@ el[0].addEventListener('touchstart', function(event) {
 
 navigator.notification.vibrate(1000);
 
+					navigator.notification.beep(2);
 
 if(x>=lef&&x<=(lef+w)&&y<=(tp+h+30)&&y>=(tp+h-30))
 {
