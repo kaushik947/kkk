@@ -429,14 +429,6 @@ score++;
 
 },2200);
 
-navigator.notification.alert(
-						'You are the winner!',  // message
-						'Game Over',            // title
-						'Done'                  // buttonName
-					);
-
-
-
 
 var flag=0;
 var lef=0;
@@ -472,9 +464,6 @@ el[0].addEventListener('touchstart', function(event) {
  var x=startX;
  var y=startY;
 
-navigator.notification.vibrate(1000);
-
-					navigator.notification.beep(2);
 
 if(x>=lef&&x<=(lef+w)&&y<=(tp+h+30)&&y>=(tp+h-30))
 {
@@ -497,6 +486,7 @@ else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
 	
 }
 
+navigator.vibrate(1000);
 
 
 
