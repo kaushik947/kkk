@@ -437,7 +437,7 @@ speedr.css("left","100%")
 }
 score++;
 
-
+navigator.notification.beep(1);
 
 
 },2200);
@@ -499,7 +499,7 @@ else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
 	
 }
 
-navigator.notification.vibrate(1000);
+navigator.notification.vibrate(20);
 
 
 
