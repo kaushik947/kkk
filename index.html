@@ -103,6 +103,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
     // device APIs are available
     //
     function onDeviceReady() {
+    	navigator.notification.alert(
+            'You are the winner!',  // message
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
         // Empty
     }
 
@@ -494,7 +499,7 @@ else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
 	
 }
 
-navigator.vibrate(1000);
+navigator.notification.vibrate(1000);
 
 
 
