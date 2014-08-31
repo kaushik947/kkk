@@ -2,6 +2,39 @@
 <html>
 <head>
 <style>
+
+.ops
+{
+position:absolute;
+width:10%;
+height:5%;
+background-color:#289ed9;
+display:inline-block;
+color:#ffffff;
+border-radius:3px;
+text-align:center;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #082c59;
+box-shadow:2px 2px 45px white;
+
+}
+#op1
+{
+top:35%;
+left:40%;
+}
+
+#op2
+{
+top:50%;
+left:25%;
+}
+#op3
+{
+top:50%;
+left:55%;
+}
+
 p
 {
 color:red;
@@ -37,6 +70,7 @@ border: 2px solid white;
 background:black;
 width:10%;
 height:10%;
+display:hidden;
 
 
 }
@@ -50,6 +84,7 @@ top:-2%;
 background:white;
 width:2%;
 height:2%;
+display:hidden;
 }
 #l
 {
@@ -59,6 +94,8 @@ top:50%;
 background:white;
 height:2%;
 width:2%;
+display:hidden;
+	
 }#r
 {
 position:absolute;
@@ -67,6 +104,7 @@ top:50%;
 background:white;
 height:2%;
 width:2%;
+display:hidden;
 }#b
 {
 position:absolute;
@@ -75,6 +113,8 @@ top:100%;
 background:white;
 width:2%;
 height:2%;
+display:hidden;
+	
 }
 
 
@@ -123,6 +163,25 @@ document.addEventListener("deviceready", onDeviceReady, false);
     }
 
 $(document).ready(function(){
+	
+	
+	
+	var op=$(".ops");
+	op[0].addEventListener('touchstart',function(){
+		
+		$(this).css("box-shadow","none");
+		
+	},false);
+	
+	
+	
+	op[0].addEventListener('touchend',function(){
+		
+		$(this).css("box-shadow","2px 2px 45px white");
+		
+	},false);
+	
+
 
 
 
@@ -140,6 +199,19 @@ var scr=$("#score");
 	var variationh=speedl.height();
 
 
+	
+	$("#op1").click(function(){
+		
+		$(".ops").hide();
+		
+		speeda.fadeIn();
+		
+		var setdetect=setInterval(detect(),1);
+		var setattack=setInterval(attack(),2200);
+		
+		
+		
+	});
 
 
 
@@ -169,288 +241,6 @@ var t;
 var ht;
 var wt;
 var bug=0;
-
-
-setInterval(function(){
-
-
-
-
- ll=parseInt(speeda.css("left"),10);
- tt=parseInt(speeda.css("top"),10);
- hh=speeda.height();
- ww=speeda.width();
-
-
-
-
-
-
-if(bug==1)
-	{
-
-
- la=parseInt(speedt.css("left"),10);
- ta=parseInt(speedt.css("top"),10);
- ha=speedt.height();
- wa=speedt.width();
-
-
-
-
-		if(((ta+ha)>=tt&&(ta+ha)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
-		{
-				hits++;
-				scr.text(hits);
-				
-
-
-		}
-
-
-
-
-
-
-	}
-
-
-
-
-
-
-else if(bug==2)
-	{
-
-
- la=parseInt(speedl.css("left"),10);
- ta=parseInt(speedl.css("top"),10);
- ha=speedl.height();
- wa=speedl.width();
-
-
-
-
-		if(((la+wa)>=ll&&(la+wa)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
-		{
-				hits++;
-				scr.text(hits);
-
-
-
-
-
-
-
-
-
-		}
-
-
-
-
-
-
-	}
-
-
-else if(bug==3)
-	{
-
-
- la=parseInt(speedb.css("left"),10);
- ta=parseInt(speedb.css("top"),10);
- ha=speedb.height();
- wa=speedb.width();
-
-
-
-
-		if(((ta)>=tt&&(ta)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
-		{
-				hits++;
-				scr.text(hits);
-
-
-
-
-
-
-
-
-
-		}
-
-
-
-
-
-
-	}
-
-
-else if(bug==4)
-	{
-
-
- la=parseInt(speedr.css("left"),10);
- ta=parseInt(speedr.css("top"),10);
- ha=speedr.height();
- wa=speedr.width();
-
-
-
-
-		if(((la)>=ll&&(la)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
-		{
-				hits++;
-				scr.text(hits);
-
-
-
-
-
-
-
-
-
-		}
-
-
-
-
-
-
-	}
-
-
-
-
-
-
-},1);
-
-
-setInterval(function(){
-
-
-
-
- l=parseInt(speeda.css("left"),10);
- t=parseInt(speeda.css("top"),10);
- ht=speeda.height();
- wt=speeda.width();
-
-
- 
-
-
-  y = Math.floor((Math.random() * 10)+1);
-
-
-  x = Math.floor((Math.random() * 10));
-
-
-if(y>5)
-y=y-5;
-
-
-var k1=l+((wt*(y-1))/4)-(variationw/2);
-var k2=t+((ht*(y-1))/4)-(variationh/2);
-
-
-
-if(x==0||x==4||x==8)
-{
-	bug=1;
-	speedt.css("left",k1);
-speedt.show();
-speedt.animate({
-top:'100%'
-},2000,function(){
-
-
-speedt.hide();
-speedt.css("top","0%")
-
-
-});
-
-
-}
-
-
-else if(x==1||x==5||x==9)
-{
-	bug=2;
-	speedl.css("top",k2);
-speedl.show();
-speedl.animate({
-left:'100%'
-},2000,function(){
-
-
-speedl.hide();
-
-
-speedl.css("left","0%")
-
-
-});
-
-
-}
-else if(x==2||x==6)
-{
-	bug=3;
-	speedb.css("left",k1);
-speedb.show();
-speedb.animate({
-top:'-5%'
-},2000,function(){
-
-
-speedb.hide();
-
-
-speedb.css("top","100%")
-
-
-});
-
-
-
-
-}
-
-
-else if(x==3||x==7)
-{
-	bug=4;
-	speedr.css("top",k2);
-speedr.show();
-speedr.animate({
-left:'-5%'
-},2000,function(){
-
-
-speedr.hide();
-
-
-speedr.css("left","100%")
-
-
-});
-
-
-
-
-}
-score++;
-
-
-
-},2200);
 
 
 var flag=0;
@@ -491,25 +281,29 @@ el[0].addEventListener('touchstart', function(event) {
 if(x>=lef&&x<=(lef+w)&&y<=(tp+h+30)&&y>=(tp+h-30))
 {
     	flag=1;
+    	navigator.notification.vibrate(10);
+
     	
 }
 else if(x>=lef&&x<=(lef+w)&&y<=(tp+30)&&y>=(tp-30))
  {
  	flag=2;
+	navigator.notification.vibrate(13);
  	
 }
 else if(y>=tp&&y<=(tp+h)&&x<=(lef+w+30)&&x>=(lef+w-30))
 {
 	flag=3;
-	
+	navigator.notification.vibrate(13);
+
 }
 else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
 {
 	flag=4;
+	navigator.notification.vibrate(13);
 	
 }
 
-navigator.notification.vibrate(10);
 
 my_media.play();
 
@@ -707,6 +501,301 @@ flag=0;
 
 
 });
+
+
+
+
+function() detect{
+
+
+
+
+ ll=parseInt(speeda.css("left"),10);
+ tt=parseInt(speeda.css("top"),10);
+ hh=speeda.height();
+ ww=speeda.width();
+
+
+
+
+
+
+if(bug==1)
+	{
+
+
+ la=parseInt(speedt.css("left"),10);
+ ta=parseInt(speedt.css("top"),10);
+ ha=speedt.height();
+ wa=speedt.width();
+
+
+
+
+		if(((ta+ha)>=tt&&(ta+ha)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
+		{
+				hits++;
+				scr.text(hits);
+				
+
+
+		}
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+else if(bug==2)
+	{
+
+
+ la=parseInt(speedl.css("left"),10);
+ ta=parseInt(speedl.css("top"),10);
+ ha=speedl.height();
+ wa=speedl.width();
+
+
+
+
+		if(((la+wa)>=ll&&(la+wa)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
+		{
+				hits++;
+				scr.text(hits);
+
+
+
+
+
+
+
+
+
+		}
+
+
+
+
+
+
+	}
+
+
+else if(bug==3)
+	{
+
+
+ la=parseInt(speedb.css("left"),10);
+ ta=parseInt(speedb.css("top"),10);
+ ha=speedb.height();
+ wa=speedb.width();
+
+
+
+
+		if(((ta)>=tt&&(ta)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
+		{
+				hits++;
+				scr.text(hits);
+
+
+
+
+
+
+
+
+
+		}
+
+
+
+
+
+
+	}
+
+
+else if(bug==4)
+	{
+
+
+ la=parseInt(speedr.css("left"),10);
+ ta=parseInt(speedr.css("top"),10);
+ ha=speedr.height();
+ wa=speedr.width();
+
+
+
+
+		if(((la)>=ll&&(la)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
+		{
+				hits++;
+				scr.text(hits);
+
+
+
+
+
+
+
+
+
+		}
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+function attack(){
+
+
+
+
+ l=parseInt(speeda.css("left"),10);
+ t=parseInt(speeda.css("top"),10);
+ ht=speeda.height();
+ wt=speeda.width();
+
+
+ 
+
+
+  y = Math.floor((Math.random() * 10)+1);
+
+
+  x = Math.floor((Math.random() * 10));
+
+
+if(y>5)
+y=y-5;
+
+
+var k1=l+((wt*(y-1))/4)-(variationw/2);
+var k2=t+((ht*(y-1))/4)-(variationh/2);
+
+
+
+if(x==0||x==4||x==8)
+{
+	bug=1;
+	speedt.css("left",k1);
+speedt.show();
+speedt.animate({
+top:'100%'
+},2000,function(){
+
+
+speedt.hide();
+speedt.css("top","0%")
+
+
+});
+
+
+}
+
+
+else if(x==1||x==5||x==9)
+{
+	bug=2;
+	speedl.css("top",k2);
+speedl.show();
+speedl.animate({
+left:'100%'
+},2000,function(){
+
+
+speedl.hide();
+
+
+speedl.css("left","0%")
+
+
+});
+
+
+}
+else if(x==2||x==6)
+{
+	bug=3;
+	speedb.css("left",k1);
+speedb.show();
+speedb.animate({
+top:'-5%'
+},2000,function(){
+
+
+speedb.hide();
+
+
+speedb.css("top","100%")
+
+
+});
+
+
+
+
+}
+
+
+else if(x==3||x==7)
+{
+	bug=4;
+	speedr.css("top",k2);
+speedr.show();
+speedr.animate({
+left:'-5%'
+},2000,function(){
+
+
+speedr.hide();
+
+
+speedr.css("left","100%")
+
+
+});
+
+
+
+
+}
+score++;
+
+
+
+}
+
+
+
+
+
 </script>
 </head>
 <body>
@@ -728,6 +817,15 @@ flag=0;
 
 
 <div id="b"></div>
+
+
+
+<a href="#" id="op1" class="ops">play</a>
+
+<a href="#" id="op2" class="ops">rate</a>
+
+<a href="#" id="op3" class="ops">how to play</a>
+
 
 
 </body>
