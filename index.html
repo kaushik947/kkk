@@ -11,11 +11,11 @@ height:5%;
 background-color:#289ed9;
 display:inline-block;
 color:#ffffff;
-border-radius:3px;
+border-radius:6px;
 text-align:center;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #082c59;
-box-shadow:2px 2px 45px white;
+box-shadow:0px 0px 45px white;
 
 }
 #op1
@@ -70,7 +70,7 @@ border: 2px solid white;
 background:black;
 width:10%;
 height:10%;
-display:hidden;
+display:none;
 
 
 }
@@ -84,7 +84,7 @@ top:-2%;
 background:white;
 width:2%;
 height:2%;
-display:hidden;
+display:none;
 }
 #l
 {
@@ -94,7 +94,7 @@ top:50%;
 background:white;
 height:2%;
 width:2%;
-display:hidden;
+display:none;
 	
 }#r
 {
@@ -104,7 +104,7 @@ top:50%;
 background:white;
 height:2%;
 width:2%;
-display:hidden;
+display:none;
 }#b
 {
 position:absolute;
@@ -113,7 +113,7 @@ top:100%;
 background:white;
 width:2%;
 height:2%;
-display:hidden;
+display:none;
 	
 }
 
@@ -166,20 +166,6 @@ $(document).ready(function(){
 	
 	
 	
-	var op=$(".ops");
-	op[0].addEventListener('touchstart',function(){
-		
-		$(this).css("box-shadow","none");
-		
-	},false);
-	
-	
-	
-	op[0].addEventListener('touchend',function(){
-		
-		$(this).css("box-shadow","2px 2px 45px white");
-		
-	},false);
 	
 
 
@@ -820,11 +806,11 @@ score++;
 
 
 
-<a href="#" id="op1" class="ops">play</a>
+<button id="op1" class="ops">play</button>
 
-<a href="#" id="op2" class="ops">rate</a>
+<button id="op2" class="ops">rate</button>
 
-<a href="#" id="op3" class="ops">how to play</a>
+<button id="op3" class="ops">how to play</button>
 
 
 
