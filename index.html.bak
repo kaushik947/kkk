@@ -161,43 +161,16 @@ document.addEventListener("deviceready", onDeviceReady, false);
         
         
     }
-
-$(document).ready(function(){
-	
-	
-	
-	
-
-
-
-
-var speeda=$("#a");
-var speedt=$("#t");
-var speedl=$("#l");
-var speedb=$("#b");
-var speedr=$("#r");
-var scr=$("#score");
-
-
-	var variationw=speedt.width();
-
-
-	var variationh=speedl.height();
-
-
-	
-	$("#op1").click(function(){
-		
-		$(".ops").hide();
-		
-		speeda.fadeIn();
-		
-		var setdetect=setInterval(detect(),1);
-		var setattack=setInterval(attack(),2200);
-		
-		
-		
-	});
+    
+    	
+var speeda;
+var speedt;
+var speedl;
+var speedb;
+var speedr;
+var scr;
+var variationw;
+var variationh;
 
 
 
@@ -234,6 +207,41 @@ var lef=0;
 var tp=0;
 var h=0;
 var w=0;
+
+
+
+$(document).ready(function(){
+	
+	
+speeda=$("#a");
+speedt=$("#t");
+speedl=$("#l");
+speedb=$("#b");
+speedr=$("#r");
+scr=$("#score");
+
+
+	variationw=speedt.width();
+
+
+	variationh=speedl.height();
+
+
+	
+	$("#op1").click(function(){
+		
+		$(".ops").hide();
+		
+		speeda.fadeIn();
+		
+		var setdetect=setInterval(detect(),1);
+		var setattack=setInterval(attack(),2200);
+		
+		
+		
+	});
+
+
 
 
 
