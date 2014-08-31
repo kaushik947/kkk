@@ -228,7 +228,7 @@ scr=$("#score");
 
 $("h1").text("ready");
 	
-	$("#op1").click(function(){
+	$("#op1").on("tap",function(){
 		
 	
 $("h1").text("click");
