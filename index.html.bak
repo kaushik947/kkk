@@ -18,18 +18,18 @@ text-align:center;
 box-shadow:0px 0px 45px white;
 
 }
-#op1
+#opa
 {
 top:35%;
 left:40%;
 }
 
-#op2
+#opb
 {
 top:50%;
 left:25%;
 }
-#op3
+#opc
 {
 top:50%;
 left:55%;
@@ -228,7 +228,7 @@ scr=$("#score");
 
 $("h1").text("ready");
 	
-	$("#op1").on("tap",function(){
+	$("#opa").click(function(){
 		
 	
 $("h1").text("click");
@@ -818,11 +818,11 @@ score++;
 
 
 
-<button id="op1" class="ops">play</button>
+<button id="opa" class="ops">play</button>
 
-<button id="op2" class="ops">rate</button>
+<button id="opb" class="ops">rate</button>
 
-<button id="op3" class="ops">how to play</button>
+<button id="opc" class="ops">how to play</button>
 
 
 
