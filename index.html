@@ -143,24 +143,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
     // device APIs are available
     //
     function onDeviceReady() {
-    	navigator.notification.alert(
-            'You are the winner!',  // message
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-        // Empty
-        
-         var my_media = new Media("./sd.mp3",
-        // success callback
-        function () {
-        },
-        // error callback
-        function (err) {
-        }
-    );
-        
-        
-    }
+    	
+        		     }
     
     	
 var speeda;
@@ -235,7 +219,7 @@ $("h1").text("click");
 		
 		$(".ops").hide();
 		
-		speeda.fadeIn();
+		$("#a").show();
 		
 		var setdetect=setInterval(detect,1);
 		var setattack=setInterval(attack,2200);
@@ -303,7 +287,6 @@ else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
 
     	navigator.notification.vibrate(10);
 
-my_media.play();
 
 
 },false);
@@ -797,7 +780,6 @@ score++;
 </script>
 </head>
 <body>
-<audio id="Sound" src="file:///sd.mp3" type="audio/mpeg" ></audio>
 <h1></h1>
 
 <h2 id="score"></h2>
