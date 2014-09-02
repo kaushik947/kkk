@@ -136,7 +136,7 @@ color:red;
 }
 </style>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script src="./jqm.js"></script>
+<script src="./myjq.js"></script>
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -212,7 +212,8 @@ scr=$("#score");
 
 $("h1").text("ready");
 	
-	$(document).on("vclick",function(){
+	var cl=$("#opa");
+cl[0].addEventListener('touchstart', function() {
 		
 	
 $("h1").text("click");
@@ -226,7 +227,7 @@ $("h1").text("click");
 		
 		
 		
-	});
+	},false);
 
 
 
