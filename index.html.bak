@@ -135,8 +135,8 @@ h3
 color:red;
 }
 </style>
-<script src="./myjq.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="./myjq.js"></script>
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);
 
