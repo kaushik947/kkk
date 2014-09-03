@@ -18,6 +18,26 @@ text-align:center;
 box-shadow:0px 0px 45px white;
 
 }
+#again
+{
+
+position:absolute;
+width:10%;
+height:5%;
+background-color:#289ed9;
+display:inline-block;
+color:#ffffff;
+border-radius:6px;
+text-align:center;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #082c59;
+box-shadow:0px 0px 45px white;
+	
+left:2%;
+top:2%;
+	
+}
+
 #opa
 {
 top:35%;
@@ -197,6 +217,9 @@ var w=0;
 $(document).ready(function(){
 	
 	
+	var setdetect;
+	var setattack;
+	
 speeda=$("#a");
 speedt=$("#t");
 speedl=$("#l");
@@ -222,14 +245,29 @@ $("h1").text("click");
 		
 		$("#a").show();
 		
-		var setdetect=setInterval(detect,1);
-		var setattack=setInterval(attack,2200);
+		setdetect=setInterval(detect,1);
+		setattack=setInterval(attack,2200);
 		
 		
 		
 	},false);
 
+	
+	var again=$("#again");
+again[0].addEventListener('touchstart', function() {
+		
+	
 
+		$(".ops").show();
+		
+		$("#a").hide();
+		
+		clearInterval(setdetect);
+		clearInterval(setattack);
+		
+		
+		
+	},false);
 
 
 
@@ -807,6 +845,7 @@ score++;
 
 <button id="opc" class="ops">how to play</button>
 
+<button id="again">again</button>
 
 
 </body>
