@@ -213,12 +213,12 @@ var h=0;
 var w=0;
 
 
+	var setdetect;
+	var setattack;
 
 $(document).ready(function(){
 	
 	
-	var setdetect;
-	var setattack;
 	
 speeda=$("#a");
 speedt=$("#t");
@@ -252,24 +252,14 @@ $("h1").text("click");
 		
 	},false);
 
+
 	
 	var again=$("#again");
 again[0].addEventListener('touchstart', function() {
 		
-	
-
-		$(".ops").show();
-		
-		$("#a").hide();
-		
-		clearInterval(setdetect);
-		clearInterval(setattack);
 		
 		
-		
-	},false);
-
-
+	,false);
 
 
 var startX,offsetX,startY,offsetY,el = $(document);
@@ -301,30 +291,27 @@ el[0].addEventListener('touchstart', function(event) {
 if(x>=lef&&x<=(lef+w)&&y<=(tp+h+30)&&y>=(tp+h-30))
 {
     	flag=1;
-    	navigator.notification.vibrate(13);
+    	
 
     	
 }
 else if(x>=lef&&x<=(lef+w)&&y<=(tp+30)&&y>=(tp-30))
  {
  	flag=2;
-	navigator.notification.vibrate(13);
- 	
+
 }
 else if(y>=tp&&y<=(tp+h)&&x<=(lef+w+30)&&x>=(lef+w-30))
 {
 	flag=3;
-	navigator.notification.vibrate(13);
 
 }
 else if(y>=tp&&y<=(tp+h)&&x<=(lef+30)&&x>=(lef-30))
 {
 	flag=4;
-	navigator.notification.vibrate(13);
-	
+
 }
 
-    	navigator.notification.vibrate(10);
+    	navigator.notification.vibrate(12);
 
 
 
@@ -523,7 +510,28 @@ flag=0;
 });
 
 
+function gameover()
+{
+	
+	
+		$(".ops").show();
+		
+		$("#a").hide();
+		$("#a").css("left","45%");
 
+		$("#a").css("top","45%");
+		
+
+		$("#a").css("width","10%");
+		
+		$("#a").css("height","10%");
+		
+
+		clearInterval(setdetect);
+		clearInterval(setattack);
+		
+	
+}
 
 function detect(){
 
@@ -556,7 +564,7 @@ if(bug==1)
 		{
 				hits++;
 				scr.text(hits);
-				
+				gameover();
 
 
 		}
@@ -590,12 +598,7 @@ else if(bug==2)
 				hits++;
 				scr.text(hits);
 
-
-
-
-
-
-
+				gameover();
 
 
 		}
@@ -625,12 +628,7 @@ else if(bug==3)
 				hits++;
 				scr.text(hits);
 
-
-
-
-
-
-
+				gameover();
 
 
 		}
@@ -660,13 +658,7 @@ else if(bug==4)
 				hits++;
 				scr.text(hits);
 
-
-
-
-
-
-
-
+				gameover();
 
 		}
 
@@ -845,7 +837,6 @@ score++;
 
 <button id="opc" class="ops">how to play</button>
 
-<button id="again">again</button>
 
 
 </body>
