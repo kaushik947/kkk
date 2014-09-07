@@ -5,57 +5,63 @@
 
 .ops
 {
+background:white;
 position:absolute;
-width:10%;
-height:5%;
-background-color:#289ed9;
-display:inline-block;
-color:#ffffff;
-border-radius:6px;
-text-align:center;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #082c59;
-box-shadow:0px 0px 45px white;
-opacity:0.6;
+width:50%;
+height:10%;
+
+border-radius:15%;
+color:black;
 
 }
-#again
-{
-
-position:absolute;
-width:10%;
-height:5%;
-background-color:#289ed9;
-display:inline-block;
-color:#ffffff;
-border-radius:6px;
-text-align:center;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #082c59;
-box-shadow:0px 0px 45px white;
-	
-left:10%;
-top:50%;
-display:none;
-	
-}
-
 #opa
 {
-top:35%;
-left:40%;
+left:-3%;
+top:55%;
 }
-
 #opb
 {
-top:50%;
-left:25%;
+left:53%;
+top:55%;
 }
 #opc
 {
-top:50%;
-left:55%;
+left:-3%;
+top:75%;
 }
+#opd
+{
+left:53%;
+top:75%;
+}
+
+#play
+{
+left:70%;
+top:5%;
+}
+#how
+{
+left:10%;
+top:5%;
+}
+#rate
+{
+left:70%;
+top:5%;
+}
+#lead
+{
+left:10%;
+top:5%;
+}
+.inops
+{
+position:absolute;
+font-size:220%;
+ text-shadow: 5px 5px 5px black;
+}
+
 
 p
 {
@@ -237,63 +243,38 @@ scr=$("#score");
 
 $("h1").text("ready");
 	
-	var cl=$("#opa");
-cl[0].addEventListener('touchstart', function() {
+	var play=$("#opa");
+play[0].addEventListener('touchstart', function() {
 		
 	
 $("h1").text("click");
-	$(this).css("opacity","1.0");	
+
+
+$("#opa").animate({left:'-55%'},500);
+
+$("#opb").animate({left:'105%'},500);
+
+$("#opc").animate({top:'105%'},500);
+
+$("#opd").animate({top:'105%'},500);
+
+
+speeda.fadeIn();
+
+
+setdetect=setInterval(detect,1);
+setattack=setInterval(attack,2200);
 	
 	
 	},false);
 	
 	
-	
-cl[0].addEventListener('touchend', function() {
-		
-	
-$("h1").text("click");
-	$(this).css("opacity","0.6");	
-		
-	setTimeout(function(){
-		$(".ops").hide();
-		
-		$("#a").show();
-		
-		setdetect=setInterval(detect,1);
-		setattack=setInterval(attack,2200);
-	},500);
-		
-		
-	},false);
-	
+
 	
 
 
+
 	
-	var again=$("#again");
-again[0].addEventListener('touchstart', function() {
-		
-	$(this).css("opacity","1.0");	
-		
-	,false);
-	
-	
-	again[0].addEventListener('touchend', function() {
-		
-		$(this).css("opacity","0.6");	
-		
-		setTimeout(function(){
-			$("#opb").hide();
-			$("#again").hide();
-			$("#a").show();
-		
-			setdetect=setInterval(detect,1);
-			setattack=setInterval(attack,2200);
-		},500);
-}		
-		
-	,false);
 	
 	
 
@@ -547,23 +528,29 @@ flag=0;
 function gameover()
 {
 	
-	
-		$("#again").show();
-		$("#opb").show();
-		
-		$("#a").hide();
-		$("#a").css("left","45%");
-
-		$("#a").css("top","45%");
-		
-
-		$("#a").css("width","10%");
-		
-		$("#a").css("height","10%");
-		
-
+	$("h1").text("GAME OVER");
 		clearInterval(setdetect);
 		clearInterval(setattack);
+		
+		speeda.fadeOut();
+		speeda.css("left","45%");
+
+		speeda.css("top","45%");
+		
+
+		speeda.css("width","10%");
+		
+		speeda.css("height","10%");
+		
+
+$("#opa").animate({left:'-3%'},500);
+
+$("#opb").animate({left:'53%'},500);
+
+$("#opc").animate({top:'75%'},500);
+
+$("#opd").animate({top:'75%'},500);		
+
 		
 	
 }
@@ -865,14 +852,10 @@ score++;
 <div id="b"></div>
 
 
-
-<button id="opa" class="ops">play</button>
-
-<button id="opb" class="ops">rate</button>
-
-<button id="opc" class="ops">how to play</button>
-
-<button id="again">again</button>
+<div id="opa" class="ops"><div id="play" class="inops">Play</div></div>
+<div id="opb" class="ops"><div id="how" class="inops">How to play</div></div>
+<div id="opc" class="ops"><div id="rate" class="inops">Rate</div></div>
+<div id="opd" class="ops"><div id="lead" class="inops">Leaderboard</div></div>
 
 
 </body>
