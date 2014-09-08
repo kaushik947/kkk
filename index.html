@@ -533,6 +533,18 @@ function gameover()
 		clearInterval(setattack);
 		
 		speeda.fadeOut();
+	
+
+$("#opa").animate({left:'-3%'},500);
+
+$("#opb").animate({left:'53%'},500);
+
+$("#opc").animate({top:'75%'},500);
+
+$("#opd").animate({top:'75%'},500);
+
+score=0;
+
 		speeda.css("left","45%");
 
 		speeda.css("top","45%");
@@ -542,14 +554,6 @@ function gameover()
 		
 		speeda.css("height","10%");
 		
-
-$("#opa").animate({left:'-3%'},500);
-
-$("#opb").animate({left:'53%'},500);
-
-$("#opc").animate({top:'75%'},500);
-
-$("#opd").animate({top:'75%'},500);		
 
 		
 	
@@ -585,7 +589,7 @@ if(bug==1)
 		if(((ta+ha)>=tt&&(ta+ha)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
 		{
 				hits++;
-				scr.text(hits);
+				scr.text(score);
 				gameover();
 
 
@@ -618,7 +622,7 @@ else if(bug==2)
 		if(((la+wa)>=ll&&(la+wa)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
 		{
 				hits++;
-				scr.text(hits);
+				scr.text(score);
 
 				gameover();
 
@@ -648,7 +652,7 @@ else if(bug==3)
 		if(((ta)>=tt&&(ta)<=(tt+hh))&&((la<=(ll+ww))&&((la+wa)>=ll)))
 		{
 				hits++;
-				scr.text(hits);
+				scr.text(score);
 
 				gameover();
 
@@ -678,7 +682,7 @@ else if(bug==4)
 		if(((la)>=ll&&(la)<=(ll+ww))&&((ta<=(tt+hh))&&((ta+ha)>=tt)))
 		{
 				hits++;
-				scr.text(hits);
+				scr.text(score);
 
 				gameover();
 
