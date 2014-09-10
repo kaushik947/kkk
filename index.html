@@ -250,7 +250,7 @@ play[0].addEventListener('touchstart', function() {
 		
 	
 $("h1").text("click");
-
+scr.fadeOut();
 
 $("#opa").animate({left:'-55%'},500);
 
@@ -261,11 +261,23 @@ $("#opc").animate({top:'105%'},500);
 $("#opd").animate({top:'105%'},500);
 
 
+	speeda.css("left","45%");
+
+		speeda.css("top","45%");
+		
+
+		speeda.css("width","10%");
+		
+		speeda.css("height","10%");
+		
+setTimeout(function(){
 speeda.fadeIn();
 
 
 setdetect=setInterval(detect,1);
 setattack=setInterval(attack,2200);
+
+		     },800);
 	
 	
 	},false);
@@ -533,7 +545,7 @@ function gameover()
 	$("h1").text("GAME OVER");
 		clearInterval(setdetect);
 		clearInterval(setattack);
-		
+		scr.fadeIn();	
 		speeda.fadeOut();
 	
 
@@ -547,15 +559,7 @@ $("#opd").animate({top:'75%'},500);
 
 score=0;
 
-		speeda.css("left","45%");
-
-		speeda.css("top","45%");
-		
-
-		speeda.css("width","10%");
-		
-		speeda.css("height","10%");
-		
+	
 
 		
 	
