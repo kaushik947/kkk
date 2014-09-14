@@ -173,7 +173,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
     var media;
     function onDeviceReady() {
     	
-    	media=new Media("file:///sd.mp3");
+    	media=new Media("./sd.mp3");
         		     }
     
     	
@@ -843,6 +843,7 @@ media.play();
 </script>
 </head>
 <body>
+<audio id="audi" src="./sd.mp3" type="audio/mp3"></audio>
 <h1></h1>
 
 <h2 id="score"></h2>
