@@ -72,6 +72,12 @@ color:red;
 h1
 {
 	color:red;
+	position:absolute;
+	top:50%;
+	left:45%;
+	color:white;
+	text-shadow: 5px 5px 5px white;
+	
 }
 #score
 {
@@ -92,8 +98,8 @@ overflow:hidden;
 #a
 {
 position:absolute;
-left:45%;
-top:45%;
+left:40%;
+top:40%;
 border: 2px solid white;
 background:black;
 width:20%;
@@ -144,24 +150,6 @@ height:2%;
 display:none;
 	
 }
-
-
-h1
-{
-color:red;
-}
-
-
-h2
-{
-color:red;
-}
-
-
-h3
-{
-color:red;
-}
 </style>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script src="./myjq.js"></script>
@@ -173,7 +161,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
     var media;
     function onDeviceReady() {
     	
-    	media=new Media("./sd.mp3");
+    	media=new Media("file:///sd.mp3");
         		     }
     
     	
@@ -243,14 +231,14 @@ scr=$("#score");
 
 	variationh=speedl.height();
 
-$("h1").text("ready");
+$("h1").text("WIDTH x HEIGHT");
 	
 	var play=$("#opa");
 play[0].addEventListener('touchstart', function() {
 		
 	
-$("h1").text("click");
 scr.fadeOut();
+$("h1").fadeOut();
 
 $("#opa").animate({left:'-55%'},500);
 
@@ -261,9 +249,9 @@ $("#opc").animate({top:'105%'},500);
 $("#opd").animate({top:'105%'},500);
 
 
-	speeda.css("left","45%");
+	speeda.css("left","40%");
 
-		speeda.css("top","45%");
+		speeda.css("top","40%");
 		
 
 		speeda.css("width","20%");
@@ -543,6 +531,8 @@ function gameover()
 {
 	
 	$("h1").text("GAME OVER");
+	$("h1").fadeIn();
+
 		clearInterval(setdetect);
 		clearInterval(setattack);
 		scr.fadeIn();	
