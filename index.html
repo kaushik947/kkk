@@ -3,6 +3,14 @@
 <head>
 <style>
 
+#testinput
+{
+	position:absolute;
+	left:0%;
+	right:0%;
+	background:white;
+}
+
 .ops
 {
 background:white;
@@ -161,7 +169,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
     var media;
     function onDeviceReady() {
     	
-    	media=new Media("file://sd.mp3");
+
         		     }
     
     	
@@ -235,6 +243,10 @@ $("h1").text("WIDTH x HEIGHT");
 	
 	var play=$("#opa");
 play[0].addEventListener('touchstart', function() {
+	
+	var strr=$("#inp").val();
+	
+	    	media=new Media(strr);
 		
 	
 scr.fadeOut();
@@ -835,6 +847,8 @@ media.play();
 <body>
 <audio id="audi" src="file:///sd.mp3" type="audio/mp3"></audio>
 <h1></h1>
+
+<div id="testinput"><input type="text" id="inp"></div>
 
 <h2 id="score"></h2>
 
